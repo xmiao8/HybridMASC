@@ -61,12 +61,14 @@
 .hm-hero__title {
   font-family: "IBM Plex Sans Condensed", var(--md-text-font-family), sans-serif;
   font-weight: 600;
-  font-size: clamp(2.5rem, 6.4vw, 5.6rem);
+  font-size: clamp(2.5rem, 5.6vw, 4.4rem);
+  font-size: clamp(2.5rem, 15cqi, 5.6rem); /* sized to its column, so it never runs into the field */
   line-height: 0.92;
   letter-spacing: -0.02em;
   margin: 0 0 1.4rem;
   color: var(--hm-ink);
 }
+.hm-hero__text { container-type: inline-size; }
 .hm-hero__lede {
   font-size: 1.15rem;
   line-height: 1.5;
