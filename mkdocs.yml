@@ -8,6 +8,7 @@ copyright: HybridMASC
 
 theme:
   name: material
+  custom_dir: overrides
   font:
     text: IBM Plex Sans
     code: IBM Plex Mono

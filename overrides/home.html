@@ -1,0 +1,133 @@
+{% extends "main.html" %}
+
+{% block extrahead %}
+  {{ super() }}
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@500;600&display=swap">
+{% endblock %}
+
+{% block hero %}
+<section class="hm-hero">
+  <div class="hm-hero__inner md-grid">
+    <div class="hm-hero__text">
+      <h1 class="hm-hero__title">HybridMASC</h1>
+      <p class="hm-hero__lede">A resin printer that cures each layer with projected light, then writes silver into it with a laser.</p>
+      <p class="hm-hero__actions">
+        <a class="md-button md-button--primary" href="{{ 'manual/' | url }}">Read the manual</a>
+        <a class="md-button" href="{{ 'design-and-implementation/' | url }}">How it's built</a>
+      </p>
+    </div>
+
+    <figure class="hm-field">
+      <svg class="hm-field__svg" viewBox="0 0 640 400" role="img"
+           aria-label="One layer in the projected field: a cured rectangular part, then a serpentine silver line written across it by the laser">
+        <defs>
+          <radialGradient id="hm-glow">
+            <stop offset="0" stop-color="#8f5bff" stop-opacity="0.9"/>
+            <stop offset="1" stop-color="#8f5bff" stop-opacity="0"/>
+          </radialGradient>
+          <path id="hm-trace" d="M150 200H200V130H260V270H320V130H380V270H440V200H490"/>
+        </defs>
+
+        <rect class="hm-field__bg" width="640" height="400"/>
+        <g class="hm-field__grid">
+          <path d="M40 0V400M80 0V400M120 0V400M160 0V400M200 0V400M240 0V400M280 0V400M320 0V400M360 0V400M400 0V400M440 0V400M480 0V400M520 0V400M560 0V400M600 0V400"/>
+          <path d="M0 40H640M0 80H640M0 120H640M0 160H640M0 200H640M0 240H640M0 280H640M0 320H640M0 360H640"/>
+        </g>
+
+        <g class="hm-field__mask" opacity="0">
+          <path fill-rule="evenodd" d="M130 80H510Q520 80 520 90V310Q520 320 510 320H130Q120 320 120 310V90Q120 80 130 80ZM155 110a11 11 0 1 0 0.01 0ZM485 290a11 11 0 1 0 0.01 0Z"/>
+          <animate attributeName="opacity" from="0" to="1" begin="0.3s" dur="0.5s" fill="freeze"/>
+        </g>
+
+        <path class="hm-field__halo" d="M150 200H200V130H260V270H320V130H380V270H440V200H490" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
+          <animate attributeName="stroke-dashoffset" from="1" to="0" begin="1.2s" dur="3.4s" fill="freeze"/>
+        </path>
+        <path class="hm-field__silver" d="M150 200H200V130H260V270H320V130H380V270H440V200H490" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
+          <animate attributeName="stroke-dashoffset" from="1" to="0" begin="1.2s" dur="3.4s" fill="freeze"/>
+        </path>
+
+        <g class="hm-field__beam" opacity="0">
+          <circle r="18" fill="url(#hm-glow)"/>
+          <circle r="5" class="hm-field__spot"/>
+          <animateMotion dur="3.4s" begin="1.2s" fill="freeze" rotate="0"><mpath href="#hm-trace"/></animateMotion>
+          <animate attributeName="opacity" values="0;1" begin="1.1s" dur="0.15s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;0" begin="4.7s" dur="0.4s" fill="freeze"/>
+        </g>
+      </svg>
+      <figcaption class="hm-field__caption">
+        <span class="hm-key hm-key--exposure">DLP exposure</span>
+        <span class="hm-key hm-key--path">Laser path</span>
+        <span class="hm-key hm-key--beam">405 nm beam</span>
+        <span class="hm-field__size">Field 60.0 by 37.5 mm</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+<script>
+  // With reduced motion, show the finished layer instead of the drawing.
+  (function () {
+    var svg = document.querySelector(".hm-field__svg");
+    if (svg && window.matchMedia("(prefers-reduced-motion: reduce)").matches && svg.setCurrentTime) {
+      svg.setCurrentTime(6);
+    }
+  })();
+</script>
+{% endblock %}
+
+{% block container %}
+<div class="md-content hm-content" data-md-component="content">
+  <article class="md-content__inner md-typeset">
+
+    <section class="hm-section">
+      <h2>How a layer is made</h2>
+      <ol class="hm-steps">
+        <li>
+          <h3>Move Z</h3>
+          <p>The build plate steps to the next layer height, measured from the vat film.</p>
+        </li>
+        <li class="hm-steps__expose">
+          <h3>Expose</h3>
+          <p>The projector shines the layer's mask up through the film and cures it.</p>
+        </li>
+        <li class="hm-steps__laser">
+          <h3>Write silver</h3>
+          <p>On layers with conductive features, the galvo steers the 405 nm laser along each line and reduces the silver salt in the resin.</p>
+        </li>
+        <li>
+          <h3>Peel</h3>
+          <p>The plate lifts in two stages to free the layer from the film, then comes back down for the next one.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="hm-section hm-split">
+      <div>
+        <h2>Specifications</h2>
+        <dl class="hm-specs">
+          <dt>Build field</dt><dd>60.0 by 37.5 mm, 1280 by 800 projector pixels</dd>
+          <dt>Projector pixel</dt><dd>46.85 µm at the build plane</dd>
+          <dt>Projector</dt><dd>TI DLP LightCrafter 4500, blue LED</dd>
+          <dt>Laser</dt><dd>405 nm diode on a two-axis galvo scanner</dd>
+          <dt>Z resolution</dt><dd>1.25 µm per microstep, homed to an optical switch</dd>
+          <dt>Laser placement</dt><dd>About 160 µm expected error after alignment</dd>
+          <dt>Control</dt><dd>Web interface on the host laptop; Arduino Mega 2560 controller</dd>
+        </dl>
+      </div>
+
+      <div>
+        <h2>Where to start</h2>
+        <ul class="hm-start">
+          <li><a href="{{ 'manual/safety/' | url }}">Safety</a><span>Read before the first session: the laser, the projector light, the resin and the moving plate.</span></li>
+          <li><a href="{{ 'manual/startup/' | url }}">Starting up</a><span>Power order, homing and setting the film zero.</span></li>
+          <li><a href="{{ 'manual/printing/' | url }}">Printing</a><span>From a sliced job to a finished part, including pausing and stopping.</span></li>
+          <li><a href="{{ 'manual/calibration/' | url }}">Calibration</a><span>Measuring the pixel size and aligning the laser to the projector.</span></li>
+          <li><a href="{{ 'manual/troubleshooting/' | url }}">Troubleshooting</a><span>What each symptom usually means and what to do.</span></li>
+          <li><a href="{{ 'manual/quick-reference/' | url }}">Quick reference</a><span>A session start to finish, on one page.</span></li>
+        </ul>
+      </div>
+    </section>
+
+  </article>
+</div>
+{% endblock %}
