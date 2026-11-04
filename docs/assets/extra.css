@@ -1,0 +1,27 @@
+/* Brand colour taken from the printer UI's indigo mark */
+[data-md-color-primary="custom"] {
+  --md-primary-fg-color: #4b4fd6;
+  --md-primary-fg-color--light: #6d70e0;
+  --md-primary-fg-color--dark: #3a3db3;
+}
+[data-md-color-accent="custom"] {
+  --md-accent-fg-color: #4b4fd6;
+  --md-accent-fg-color--transparent: rgba(75, 79, 214, 0.1);
+}
+[data-md-color-scheme="slate"][data-md-color-primary="custom"] {
+  --md-primary-fg-color: #2b2d6e;
+  --md-typeset-a-color: #9ea1f2;
+}
+[data-md-color-scheme="slate"][data-md-color-accent="custom"] {
+  --md-accent-fg-color: #9ea1f2;
+}
+
+/* Screenshots: a hairline frame so light UI shots don't float on the page */
+.md-typeset img:not(.twemoji):not(.diagram) {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 6px;
+}
+.md-typeset img.diagram { border-radius: 10px; }
+
+/* Wide tables scroll instead of squeezing */
+.md-typeset table:not([class]) { font-size: 0.72rem; }

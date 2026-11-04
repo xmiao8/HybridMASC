@@ -1,0 +1,87 @@
+site_name: HybridMASC
+site_description: Hybrid DLP and laser printer that cures resin layer by layer and writes silver into it with a 405 nm laser.
+site_url: https://xmiao8.github.io/HybridMASC/
+repo_url: https://github.com/xmiao8/HybridMASC
+repo_name: xmiao8/HybridMASC
+edit_uri: edit/main/docs/
+copyright: HybridMASC
+
+theme:
+  name: material
+  font:
+    text: IBM Plex Sans
+    code: IBM Plex Mono
+  icon:
+    logo: material/printer-3d
+    repo: fontawesome/brands/github
+  favicon: assets/favicon.svg
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Light mode
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - navigation.indexes
+    - toc.follow
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+
+extra_css:
+  - assets/extra.css
+
+nav:
+  - Home: index.md
+  - User manual:
+      - manual/index.md
+      - Safety: manual/safety.md
+      - The web interface: manual/interface.md
+      - Starting up and shutting down: manual/startup.md
+      - Z stage and film zero: manual/z-stage.md
+      - Projector: manual/projector.md
+      - Laser and galvo: manual/laser.md
+      - Calibration: manual/calibration.md
+      - Preparing a job: manual/slicing.md
+      - Jobs: manual/jobs.md
+      - Printing: manual/printing.md
+      - Sequencer: manual/sequencer.md
+      - Settings: manual/settings.md
+      - Troubleshooting: manual/troubleshooting.md
+      - Quick reference: manual/quick-reference.md
+      - Open items: manual/open-items.md
+  - Design and implementation: design-and-implementation.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+plugins:
+  - search
