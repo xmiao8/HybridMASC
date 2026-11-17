@@ -63,6 +63,13 @@ nav:
       - Troubleshooting: manual/troubleshooting.md
       - Quick reference: manual/quick-reference.md
       - Open items: manual/open-items.md
+  - Build guide:
+      - build/index.md
+      - Parts list: build/parts.md
+      - Assembly: build/assembly.md
+      - Wiring: build/wiring.md
+      - First power-up: build/commissioning.md
+      - Open items: build/open-items.md
   - Design and implementation: design-and-implementation.md
 
 markdown_extensions:

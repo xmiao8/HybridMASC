@@ -1,10 +1,11 @@
 # HybridMASC
 
-User manual and design notes for HybridMASC, a bottom-up DLP resin printer with a 405 nm laser that writes silver into each cured layer.
+User manual, build guide and design notes for HybridMASC, a bottom-up DLP resin printer with a 405 nm laser that writes silver into each cured layer.
 
 **Read it online: https://xmiao8.github.io/HybridMASC/**
 
 - `docs/manual/`: the user manual, one page per topic, with screenshots in `docs/manual/img/`
+- `docs/build/`: the build guide: parts list, assembly, wiring and first power-up
 - `docs/design-and-implementation.md`: how the hardware, firmware and control software are built
 - `mkdocs.yml`: site settings and navigation
 
