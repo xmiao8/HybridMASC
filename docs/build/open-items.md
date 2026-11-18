@@ -39,4 +39,4 @@ These are needed before someone else can repeat the build from this guide alone.
 
 ## Cost
 
-- [ ] Suppliers and prices for the purchased parts
+- [ ] Suppliers and actual costs from purchase records, to replace the estimates

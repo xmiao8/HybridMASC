@@ -1,54 +1,70 @@
 # Parts list
 
-Three tables: parts to buy, parts to print or machine, and fasteners and consumables. Quantities in brackets come with the donor Form 2. A part marked **to confirm** is on the machine, but its exact model or size isn't recorded yet (see [Open items](open-items.md)). Quantities are for one machine.
+A cost estimate, then three tables: parts to buy, parts to print or machine, and fasteners and consumables. Quantities in brackets come with the donor Form 2. A part marked **to confirm** is on the machine, but its exact model or size isn't recorded yet (see [Open items](open-items.md)). Quantities are for one machine.
 
-Where a part was bought from a known listing, the Notes column links to it. Listings change, so check the specification against the table before ordering. Prices aren't listed yet.
+Where a part was bought from a known listing, the Notes column links to it. Listings change, so check the specification against the table before ordering.
+
+## Cost estimate
+
+Approximate prices in US dollars, checked in November 2026 against distributor and marketplace listings. Where no listing was checked the price is marked as an estimate. Shipping, tax and tools aren't included, and nothing here is a quote.
+
+| Group | Estimate (USD) |
+|---|---|
+| Purchased parts (tables below) | 1,884–3,197 |
+| Printed parts (filament) | 20–40 |
+| Seal plates, machined from the drawings | 30–150 |
+| Fasteners, wire and connectors | 20–40 |
+| Release film | 18–30 |
+| Laser safety eyewear and a beam block | 40–150 |
+| **Total** | **about 2,000–3,600** |
+
+The DLP LightCrafter 4500 is most of the cost: about $1,300 from TI, more from distributors. Most of the rest is the donor Form 2, the galvo kit and the laptop, all of which vary a lot second-hand. A lab that already has a laptop and a spare Form 2 can build the rest for roughly $1,700–2,800.
 
 ## Purchased parts
 
 ### Chassis and motion
 
-| # | Part | Qty | Specification | Notes |
-|---|---|---|---|---|
-| 1 | Formlabs Form 2 (donor printer) | 1 | Chassis, Z tower, carriage, orange cover, and items 2 to 4 and 9 | A unit with a failed laser or mainboard is enough; only the frame, the Z axis and the fold mirrors are reused |
-| 2 | Z stepper motor | (1) | 1.8° (200 steps/rev), driven at 600 mA RMS | From the donor Form 2; nothing to buy |
-| 3 | Lead screw | (1) | 4 mm lead, direct drive | From the donor Form 2; nothing to buy. The firmware assumes a 4 mm lead (800 microsteps/mm) |
-| 4 | Optical slot sensor (endstop) | (1) | Output HIGH when blocked, read with the controller's pull-up | From the donor Form 2; nothing to buy |
+| # | Part | Qty | Specification | Price (USD) | Notes |
+|---|---|---|---|---|---|
+| 1 | Formlabs Form 2 (donor printer) | 1 | Chassis, Z tower, carriage, orange cover, and items 2 to 4 and 9 | 150–400 | A unit with a failed laser or mainboard is enough; only the frame, the Z axis and the fold mirrors are reused |
+| 2 | Z stepper motor | (1) | 1.8° (200 steps/rev), driven at 600 mA RMS | — | From the donor Form 2; nothing to buy |
+| 3 | Lead screw | (1) | 4 mm lead, direct drive | — | From the donor Form 2; nothing to buy. The firmware assumes a 4 mm lead (800 microsteps/mm) |
+| 4 | Optical slot sensor (endstop) | (1) | Output HIGH when blocked, read with the controller's pull-up | — | From the donor Form 2; nothing to buy |
 
 ### Light sources and optics
 
-| # | Part | Qty | Specification | Notes |
-|---|---|---|---|---|
-| 5 | DLP projector | 1 | TI DLP LightCrafter 4500 (DLPC350 controller, 912 × 1140 DMD), blue LED channel | HDMI input at 1280 × 800; USB for LED control. LED wavelength **to confirm** |
-| 6 | Laser module | 1 | 405 nm laser engraver module, nominally 500 mW, with focusing lens | [Amazon listing](https://a.co/d/09Kt7r56). Laser class and measured power **to confirm** |
-| 7 | Laser driver | 1 | Constant-current driver with a TTL modulation input | Runs from the 12 V laser supply (item 17). Whether it comes with the module (item 6) or is separate, and its modulation bandwidth, are **to confirm** |
-| 8 | Two-axis galvanometer scanner with its driver board | 1 set | Analog position inputs, one per axis | [Amazon listing](https://a.co/d/0a6Q2i9N). A laser-show (ILDA) scanner kit; only the mirrors, motors and analog driver are used, not the kit's show controller. Scan speed, scan angle and input range **to confirm** |
-| 9 | Fold mirror | (2) | | From the donor Form 2; nothing to buy |
-| 10 | Alignment camera | 1 | Arducam 8 MP USB (UVC), manual focus | Used for calibration only |
+| # | Part | Qty | Specification | Price (USD) | Notes |
+|---|---|---|---|---|---|
+| 5 | DLP projector | 1 | TI DLP LightCrafter 4500 (DLPC350 controller, 912 × 1140 DMD), blue LED channel | 1,300–1,700 | HDMI input at 1280 × 800; USB for LED control. LED wavelength **to confirm** |
+| 6 | Laser module | 1 | 405 nm laser engraver module, nominally 500 mW, with focusing lens | 25–55 | [Amazon listing](https://a.co/d/09Kt7r56). Laser class and measured power **to confirm** |
+| 7 | Laser driver | 1 | Constant-current driver with a TTL modulation input | Included (with item 6) | Runs from the 12 V laser supply (item 17). Whether it comes with the module (item 6) or is separate, and its modulation bandwidth, are **to confirm** |
+| 8 | Two-axis galvanometer scanner with its driver board | 1 set | Analog position inputs, one per axis | 85–250 | [Amazon listing](https://a.co/d/0a6Q2i9N). A laser-show (ILDA) scanner kit; only the mirrors, motors and analog driver are used, not the kit's show controller. Scan speed, scan angle and input range **to confirm** |
+| 9 | Fold mirror | (2) | | — | From the donor Form 2; nothing to buy |
+| 10 | Alignment camera | 1 | Arducam 8 MP USB (UVC), manual focus | 35–75 | Used for calibration only |
 
 ### Electronics
 
-| # | Part | Qty | Specification | Notes |
-|---|---|---|---|---|
-| 11 | Controller | 1 | Arduino Mega 2560 R3 | Powered from the host's USB |
-| 12 | Control board | 1 | Custom two-layer circuit board that plugs onto the Mega ("MASC 3.0 v1.0", about 102 × 81 mm) | Carries items 13 to 15 and the connectors; design files not published yet |
-| 13 | Stepper driver | 1 | TMC2208 V3.0 stepper driver module with heatsink, used in UART mode | [Amazon listing](https://a.co/d/09XOhLya). Socketed on the control board, with the UART wired both ways |
-| 14 | Galvo DAC | 2 | Analog Devices AD5761R, 16-bit, ±10 V output | One per axis; needs an external reference (**to confirm** how it is provided) |
-| 15 | Buzzer, voltage regulators, connectors | 1 set | As on the control board | Listed in the board's own bill of materials (not published yet) |
-| 16 | Power supply | 1 | Mean Well RT-65C: +5 V at 5 A, +15 V at 2.2 A, −15 V at 0.5 A, 65.5 W, 88–264 V AC input | Feeds the Z driver and, presumably, the galvo driver. Which rail feeds which is **to confirm** |
-| 17 | Laser power supply | 1 | 12 V DC, 2 A | Powers the laser module and its driver (items 6 and 7) only. Model **to confirm** |
-| 18 | Projector power supply | 1 | As supplied with the LightCrafter 4500 | |
+| # | Part | Qty | Specification | Price (USD) | Notes |
+|---|---|---|---|---|---|
+| 11 | Controller | 1 | Arduino Mega 2560 R3 | 40–52 | Powered from the host's USB |
+| 12 | Control board | 1 | Custom two-layer circuit board that plugs onto the Mega ("MASC 3.0 v1.0", about 102 × 81 mm) | 15–50 (pcb fabrication) | Carries items 13 to 15 and the connectors; design files not published yet |
+| 13 | Stepper driver | 1 | TMC2208 V3.0 stepper driver module with heatsink, used in UART mode | 6–15 | [Amazon listing](https://a.co/d/09XOhLya). Socketed on the control board, with the UART wired both ways |
+| 14 | Galvo DAC | 2 | Analog Devices AD5761R, 16-bit, ±10 V output | 15–30 (both) | One per axis; needs an external reference (**to confirm** how it is provided) |
+| 15 | Buzzer, voltage regulators, connectors | 1 set | As on the control board | 10–30 (estimate) | Listed in the board's own bill of materials (not published yet) |
+| 16 | Power supply | 1 | Mean Well RT-65C: +5 V at 5 A, +15 V at 2.2 A, −15 V at 0.5 A, 65.5 W, 88–264 V AC input | 25–60 | Feeds the Z driver and, presumably, the galvo driver. Which rail feeds which is **to confirm** |
+| 17 | Laser power supply | 1 | 12 V DC, 2 A | 8–15 (estimate; often included with item 6) | Powers the laser module and its driver (items 6 and 7) only. Model **to confirm** |
+| 18 | Projector power supply | 1 | As supplied with the LightCrafter 4500 | Included (with item 5) | |
 
 ### Host and cables
 
-| # | Part | Qty | Specification | Notes |
-|---|---|---|---|---|
-| 19 | Host laptop | 1 | Linux laptop with one HDMI port and at least two USB ports | Runs the control service and drives the projector. The Mega and the projector's LED control take one USB port each; the alignment camera needs a third, so use a USB hub if the laptop has only two. The prototype uses a 4-thread laptop with 6 GB RAM running Ubuntu; no desktop session is needed |
-| 20 | HDMI cable | 1 | Host to projector | |
-| 21 | USB cable, A to B | 1 | Host to Mega | Also powers the Mega |
-| 22 | USB cable to the projector's USB port | 1 | Host to projector (LED control) | |
-| 23 | USB cable for the camera | 1 | Long enough to follow the Z carriage over its full travel | |
-| 24 | USB hub | (1) | Powered USB 2.0 or better | Only if the laptop has fewer than three USB ports |
+| # | Part | Qty | Specification | Price (USD) | Notes |
+|---|---|---|---|---|---|
+| 19 | Host laptop | 1 | Linux laptop with one HDMI port and at least two USB ports | 150–400 (used; estimate) | Runs the control service and drives the projector. The Mega and the projector's LED control take one USB port each; the alignment camera needs a third, so use a USB hub if the laptop has only two. The prototype uses a 4-thread laptop with 6 GB RAM running Ubuntu; no desktop session is needed |
+| 20 | HDMI cable | 1 | Host to projector | 5–10 (estimate) | |
+| 21 | USB cable, A to B | 1 | Host to Mega | 5–10 (estimate) | Also powers the Mega |
+| 22 | USB cable to the projector's USB port | 1 | Host to projector (LED control) | 5–10 (estimate) | |
+| 23 | USB cable for the camera | 1 | Long enough to follow the Z carriage over its full travel | 5–15 (estimate) | |
+| 24 | USB hub | (1) | Powered USB 2.0 or better | 0–20 (optional) | Only if the laptop has fewer than three USB ports |
 
 ## Printed and machined parts
 
