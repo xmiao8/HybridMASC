@@ -10,7 +10,7 @@ Where a part was bought from a known listing, the Notes column links to it. List
 
 | # | Part | Qty | Specification | Notes |
 |---|---|---|---|---|
-| 1 | Formlabs Form 2 (donor printer) | 1 | Chassis, Z tower, carriage, orange cover, and items 2 to 4 | A unit with a failed laser or mainboard is enough; only the frame and Z axis are reused |
+| 1 | Formlabs Form 2 (donor printer) | 1 | Chassis, Z tower, carriage, orange cover, and items 2 to 4 and 9 | A unit with a failed laser or mainboard is enough; only the frame, the Z axis and the fold mirrors are reused |
 | 2 | Z stepper motor | (1) | 1.8° (200 steps/rev), driven at 600 mA RMS | From the donor Form 2; nothing to buy |
 | 3 | Lead screw | (1) | 4 mm lead, direct drive | From the donor Form 2; nothing to buy. The firmware assumes a 4 mm lead (800 microsteps/mm) |
 | 4 | Optical slot sensor (endstop) | (1) | Output HIGH when blocked, read with the controller's pull-up | From the donor Form 2; nothing to buy |
@@ -23,32 +23,31 @@ Where a part was bought from a known listing, the Notes column links to it. List
 | 6 | Laser module | 1 | 405 nm laser engraver module, nominally 500 mW, with focusing lens | [Amazon listing](https://a.co/d/09Kt7r56). Laser class and measured power **to confirm** |
 | 7 | Laser driver | 1 | Constant-current driver with a TTL modulation input | Whether it comes with the module (item 6) or is separate, its supply voltage and its modulation bandwidth are **to confirm** |
 | 8 | Two-axis galvanometer scanner with its driver board | 1 set | Analog position inputs, one per axis | [Amazon listing](https://a.co/d/0a6Q2i9N). A laser-show (ILDA) scanner kit; only the mirrors, motors and analog driver are used, not the kit's show controller. Scan speed, scan angle and input range **to confirm** |
-| 9 | Scan lens | 1 | Barrel labelled "89.6 mm" | Sits above the scanner, under the funnel; model **to confirm** |
-| 10 | Fold mirror | 2 | About 22 × 22 × 3 mm, first-surface | Coating and supplier **to confirm** |
-| 11 | Alignment camera | 1 | Arducam 8 MP USB (UVC), manual focus | Used for calibration only |
+| 9 | Fold mirror | (2) | | From the donor Form 2; nothing to buy |
+| 10 | Alignment camera | 1 | Arducam 8 MP USB (UVC), manual focus | Used for calibration only |
 
 ### Electronics
 
 | # | Part | Qty | Specification | Notes |
 |---|---|---|---|---|
-| 12 | Controller | 1 | Arduino Mega 2560 R3 | Powered from the host's USB |
-| 13 | Control board | 1 | Custom two-layer circuit board that plugs onto the Mega ("MASC 3.0 v1.0", about 102 × 81 mm) | Carries items 14 to 16 and the connectors; design files not published yet |
-| 14 | Stepper driver | 1 | TMC2208 V3.0 stepper driver module with heatsink, used in UART mode | [Amazon listing](https://a.co/d/09XOhLya). Socketed on the control board, with the UART wired both ways |
-| 15 | Galvo DAC | 2 | Analog Devices AD5761R, 16-bit, ±10 V output | One per axis; needs an external reference (**to confirm** how it is provided) |
-| 16 | Buzzer, voltage regulators, connectors | 1 set | As on the control board | Listed in the board's own bill of materials (not published yet) |
-| 17 | Power supply | 1 | Mean Well RT-65C: +5 V at 5 A, +15 V at 2.2 A, −15 V at 0.5 A, 65.5 W, 88–264 V AC input | Which rail feeds the Z driver, the galvo driver and the laser driver is **to confirm** |
-| 18 | Second power supply | 1 | **To confirm** | The assembly model shows a second, smaller supply on the right-hand side for the galvo and laser. Whether the machine has one, and its model, is **to confirm** |
-| 19 | Projector power supply | 1 | As supplied with the LightCrafter 4500 | |
+| 11 | Controller | 1 | Arduino Mega 2560 R3 | Powered from the host's USB |
+| 12 | Control board | 1 | Custom two-layer circuit board that plugs onto the Mega ("MASC 3.0 v1.0", about 102 × 81 mm) | Carries items 13 to 15 and the connectors; design files not published yet |
+| 13 | Stepper driver | 1 | TMC2208 V3.0 stepper driver module with heatsink, used in UART mode | [Amazon listing](https://a.co/d/09XOhLya). Socketed on the control board, with the UART wired both ways |
+| 14 | Galvo DAC | 2 | Analog Devices AD5761R, 16-bit, ±10 V output | One per axis; needs an external reference (**to confirm** how it is provided) |
+| 15 | Buzzer, voltage regulators, connectors | 1 set | As on the control board | Listed in the board's own bill of materials (not published yet) |
+| 16 | Power supply | 1 | Mean Well RT-65C: +5 V at 5 A, +15 V at 2.2 A, −15 V at 0.5 A, 65.5 W, 88–264 V AC input | Which rail feeds the Z driver, the galvo driver and the laser driver is **to confirm** |
+| 17 | Second power supply | 1 | **To confirm** | The assembly model shows a second, smaller supply on the right-hand side for the galvo and laser. Whether the machine has one, and its model, is **to confirm** |
+| 18 | Projector power supply | 1 | As supplied with the LightCrafter 4500 | |
 
 ### Host and cables
 
 | # | Part | Qty | Specification | Notes |
 |---|---|---|---|---|
-| 20 | Host computer | 1 | Laptop or small PC with HDMI out and three USB ports, running Linux | The prototype uses a 4-thread laptop with 6 GB RAM and Ubuntu; no desktop session is needed |
-| 21 | HDMI cable | 1 | Host to projector | |
-| 22 | USB cable, A to B | 1 | Host to Mega | Also powers the Mega |
-| 23 | USB cable to the projector's USB port | 1 | Host to projector (LED control) | |
-| 24 | USB cable for the camera | 1 | Long enough to follow the Z carriage over its full travel | |
+| 19 | Host computer | 1 | Laptop or small PC with HDMI out and three USB ports, running Linux | The prototype uses a 4-thread laptop with 6 GB RAM and Ubuntu; no desktop session is needed |
+| 20 | HDMI cable | 1 | Host to projector | |
+| 21 | USB cable, A to B | 1 | Host to Mega | Also powers the Mega |
+| 22 | USB cable to the projector's USB port | 1 | Host to projector (LED control) | |
+| 23 | USB cable for the camera | 1 | Long enough to follow the Z carriage over its full travel | |
 
 ## Printed and machined parts
 
@@ -79,8 +78,8 @@ Which vat revision is on the machine now is **to confirm**: the CAD folder also 
 | Part | File | Qty | Size (mm) | How it's made | Notes |
 |---|---|---|---|---|---|
 | Projector stand | `DLP Stand` | 1 | | 3D printed | Holds the LightCrafter in the base, lens up |
-| Galvo stand | `Galvo Stand` | 1 | 118 × 76 × 45 | 3D printed | Holds the scanner block under the scan lens |
-| Mirror stand | `Mirror Stand` | 1 | 91 × 92 × 70 | 3D printed | Carries the two fold mirrors |
+| Galvo stand | `Galvo Stand` | 1 | 118 × 76 × 45 | 3D printed | Holds the scanner block under the funnel |
+| Mirror stand | `Mirror Stand` | 1 | 91 × 92 × 70 | 3D printed | Carries the two fold mirrors from the Form 2 |
 | Laser bracket | `Top Laser`, `Laser_Assem` | 1 | 84 × 58 × 30; 104 × 88 × 36 | 3D printed | Holds the laser module on the right-hand wall, in line with the entry hole |
 | Laser adapter | `Laser Adapter` | 1 | | 3D printed | Fits the laser module to its bracket; whether it is still in use is **to confirm** |
 

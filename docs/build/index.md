@@ -7,14 +7,14 @@ This guide describes how the HybridMASC prototype is put together: what to buy, 
 
 ## What you are building
 
-HybridMASC is built into the chassis of a Formlabs Form 2. The Form 2's frame, Z tower, lead screw and orange cover are kept. Its optics, resin tank, wiper and electronics are removed and replaced:
+HybridMASC is built into the chassis of a Formlabs Form 2. The Form 2's frame, Z tower, lead screw, fold mirrors and orange cover are kept. Its laser and galvo, resin tank, wiper and electronics are removed and replaced:
 
 | Assembly | Where it sits | What it replaces |
 |---|---|---|
 | Vat with a release film, on a printed light funnel | On the top deck, over an opening cut for the funnel | The Form 2 resin tank and wiper |
 | Build plate on a new arm, with the alignment camera | On the Form 2's Z carriage | The Form 2 build platform |
 | DLP projector, pointing up | Inside the base, under the funnel | The Form 2 laser and galvo block |
-| Galvo scanner, scan lens and two fold mirrors | Inside the base, beside the projector | |
+| Galvo scanner and the Form 2's two fold mirrors | Inside the base, beside the projector | |
 | 405 nm laser module and its driver | Outside, on the right-hand wall; the beam enters through a hole | |
 | Controller, Z driver and power supplies | Front bay of the base and the right-hand wall | The Form 2 mainboard and display |
 | Host laptop | Beside the machine | |
@@ -29,7 +29,7 @@ flowchart TB
     end
     subgraph base["Inside the base"]
         F["Light funnel"] --- D["DLP projector"]
-        F --- S["Scan lens + galvo scanner"]
+        F --- S["Galvo scanner"]
         S --- M["Fold mirrors 1 and 2"]
     end
     V --- F

@@ -40,11 +40,11 @@ The film is a consumable. Slow laser passes mark it, and the Sequencer tab track
 
 ## 4. Optics in the base
 
-The projector and the scanner sit side by side under the funnel, both pointing up at the same film. Neither lens can be directly under the centre of the build field, so each sits to one side of it and reaches the field at a slight angle. The calibration maps one onto the other, keystone included.
+The projector and the scanner sit side by side under the funnel, both pointing up at the same film. Neither can be directly under the centre of the build field, so each sits to one side of it and reaches the field at a slight angle. The calibration maps one onto the other, keystone included.
 
 1. **Projector.** Fix the LightCrafter 4500 to its stand with the lens pointing up, and place it so the lens is under the funnel. Leave access to its HDMI, USB and power connectors, and to the focus ring.
-2. **Galvo scanner and scan lens.** Fix the scanner block to the galvo stand with the scan lens above it, under the funnel beside the projector lens. Leave the scanner's input aperture facing fold mirror 2.
-3. **Fold mirrors.** Fit the two mirrors to the mirror stand at the back right of the bay. Mirror 1 sits level with the laser's entry hole and turns the incoming beam straight down. Mirror 2 sits below it, level with the scanner's input, and turns the beam forward into the scanner.
+2. **Galvo scanner.** Fix the scanner block to the galvo stand, under the funnel beside the projector lens, with its output facing up. There is no scan lens: the laser module's own lens focuses the beam on the film. Leave the scanner's input aperture facing fold mirror 2.
+3. **Fold mirrors.** Fit the two mirrors taken from the Form 2 to the mirror stand at the back right of the bay. Mirror 1 sits level with the laser's entry hole and turns the incoming beam straight down. Mirror 2 sits below it, level with the scanner's input, and turns the beam forward into the scanner.
 4. **Mark and drill the entry hole** (step 1.7) if you haven't yet, in line with mirror 1.
 
 Leave fine positioning until [first power-up](commissioning.md): the projector is focused and the mirrors are aligned with the machine running.
