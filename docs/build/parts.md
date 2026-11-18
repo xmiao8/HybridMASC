@@ -48,12 +48,12 @@ The projector is most of the cost. The total assumes a new DLP LightCrafter 4500
 
 | # | Part | Qty | Specification | Price (USD) | Notes |
 |---|---|---|---|---|---|
-| 11 | Controller | 1 | Arduino Mega 2560 R3 | 40–52 | Powered from the host's USB |
+| 11 | Controller | 1 | Arduino Mega 2560 R3 | 40–52 | Powered from the RT-65C's +5 V rail; talks to the host over USB |
 | 12 | Control board | 1 | Custom two-layer circuit board that plugs onto the Mega ("MASC 3.0 v1.0", about 102 × 81 mm) | 15–50 (pcb fabrication) | Carries items 13 to 15 and the connectors; design files not published yet |
 | 13 | Stepper driver | 1 | TMC2208 V3.0 stepper driver module with heatsink, used in UART mode | 6–15 | [Amazon listing](https://a.co/d/09XOhLya). Socketed on the control board, with the UART wired both ways |
 | 14 | Galvo DAC | 2 | Analog Devices AD5761R, 16-bit, ±10 V output | 15–30 (both) | One per axis; uses its internal reference |
 | 15 | Buzzer, voltage regulators, connectors | 1 set | As on the control board | 10–30 (estimate) | Listed in the board's own bill of materials (not published yet) |
-| 16 | Power supply | 1 | Mean Well RT-65C: +5 V at 5 A, +15 V at 2.2 A, −15 V at 0.5 A, 65.5 W, 88–264 V AC input | 25–60 | +15 V feeds the Z driver; ±15 V feeds the galvo driver |
+| 16 | Power supply | 1 | Mean Well RT-65C: +5 V at 5 A, +15 V at 2.2 A, −15 V at 0.5 A, 65.5 W, 88–264 V AC input | 25–60 | +5 V powers the Arduino; +15 V feeds the Z driver; ±15 V feeds the galvo driver |
 | 17 | Laser power supply | 1 | 12 V DC, 2 A | 8–15 (estimate) | Any 12 V, 2 A adapter. Powers the laser module and its driver (items 6 and 7) only |
 | 18 | Projector power supply | 1 | As supplied with the projector | Included (with item 5) | |
 

@@ -61,7 +61,7 @@ The beam path from the module to the wall is open on the prototype. A printed sh
 
 1. **RT-65C power supply:** front bay, left.
 2. **Controller:** fit the Mega to the controller stand in the front bay, right, and plug the control board onto it. Fit the TMC2208 with its heatsink into its socket.
-3. **Leave the USB port reachable.** The Mega is powered and controlled over USB from the host.
+3. **Leave the USB port reachable.** The host controls the Mega over USB; its power comes from the RT-65C's +5 V rail.
 
 Then go on to [Wiring](wiring.md).
 

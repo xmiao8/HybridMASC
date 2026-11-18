@@ -47,7 +47,7 @@ flowchart LR
 - Similar galvo kits are specified at up to 0.6 A on −15 V, a little over the RT-65C's 0.5 A rating for that rail (its current range goes to 1 A). Don't add other loads to −15 V.
 
 !!! warning "Power order"
-    The firmware sets up the converters once, when the Mega starts. If the galvo electronics are powered after the Mega, the scanner ignores every move until the Mega is reset. Since the Mega is powered from the host's USB, switch on the machine's supplies before the host.
+    The firmware sets up the converters once, when the Mega starts. If the galvo electronics are powered after the Mega, the scanner ignores every move until the Mega is reset. The Mega runs from the RT-65C's +5 V, but the USB cable also powers it whenever the host is on, so it can start before the supply does. Switch on the machine's supplies before the host.
 
 ## Laser
 
@@ -61,10 +61,10 @@ flowchart LR
 |---|---|---|
 | Mean Well RT-65C, +15 V | Z driver (motor supply), galvo driver (positive rail) | 15 V, 2.2 A |
 | Mean Well RT-65C, −15 V | Galvo driver (negative rail) | −15 V, 0.5 A |
-| Mean Well RT-65C, +5 V | **To confirm** whether anything uses it | 5 V, 5 A |
+| Mean Well RT-65C, +5 V | Arduino Mega and the control board's logic | 5 V, 5 A |
 | Laser supply | Laser module and its driver | 12 V DC, 2 A; any adapter of that rating |
 | Projector supply | DLP projector | As supplied with the projector |
-| Host USB | Mega (5 V), camera | 5 V |
+| Host USB | Camera, projector USB control | 5 V |
 
 Give the Z motor, the galvo electronics, the projector and the laser separate switches, or at least a separate switch for the laser. Earth the chassis and both supplies' cases.
 
@@ -74,7 +74,7 @@ There is no emergency stop or sash interlock wired to the controller. The STOP b
 
 | Cable | From | To | Purpose |
 |---|---|---|---|
-| USB | Host | Mega | Commands, at 500000 baud; also powers the Mega |
+| USB | Host | Mega | Commands, at 500000 baud |
 | HDMI | Host | Projector | Layer images at 1280 × 800, 60 Hz |
 | USB | Host | Projector | LED on, off and level |
 | USB | Host | Camera | Calibration pictures |
