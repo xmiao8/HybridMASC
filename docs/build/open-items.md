@@ -12,12 +12,12 @@ These are needed before someone else can repeat the build from this guide alone.
 
 ## Part models and ratings
 
-- [ ] Laser diode module and driver: models, laser class, measured optical power, modulation bandwidth, and whether the TTL input has a pull-down
-- [ ] Galvo scanner and its driver board: model, supply voltages, input range and connector pin-out
+- [ ] Laser module and driver: laser class, measured optical power, supply voltage, modulation bandwidth, whether the driver is part of the module, and whether the TTL input has a pull-down
+- [ ] Galvo scanner and its driver board: scan speed and angle, supply voltages, input range and connector pin-out
 - [ ] Scan lens (barrel labelled "89.6 mm") and fold mirrors: models and coatings
 - [ ] Projector LED wavelength and irradiance at the build plane
 - [ ] Z motor model; lead screw lead; endstop sensor model
-- [ ] Main and auxiliary power supplies: voltages and ratings
+- [ ] Which RT-65C rail feeds each load, and whether there is a second supply for the galvo and laser
 - [ ] How the AD5761R converters get their voltage reference
 - [ ] Release film: FEP or PFA, and supplier
 

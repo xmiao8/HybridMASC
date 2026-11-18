@@ -14,7 +14,7 @@ Positions are given facing the front of the printer: the Z tower is at the back,
 3. **Flatten the top deck.** Remove the tank tray and wiper mechanism so the deck is a flat surface.
 4. **Cut the deck opening** for the light funnel, centred on the build area. The funnel is about 150 × 115 mm where it passes through the deck; cut to the printed part, not to this number.
 5. **Clear the optics bay.** The inside of the base, below the deck, must be empty over the footprint of the projector, the galvo stand and the mirror stand.
-6. **Open the front bay** for the main power supply (left) and the controller (right).
+6. **Open the front bay** for the RT-65C power supply (left) and the controller (right).
 7. **Drill the laser entry hole** in the right-hand wall, about 12 mm in diameter, in line with fold mirror 1. Mark it from the mirror stand once that is in place (step 4.3), not from a measurement.
 8. **Fit the base tray** under the chassis in place of the stock feet.
 
@@ -54,13 +54,13 @@ Leave fine positioning until [first power-up](commissioning.md): the projector i
 1. **Fit the laser bracket** to the outside of the right-hand wall, so the module's lens points through the entry hole at mirror 1.
 2. **Fit the laser module** to the bracket. Don't connect its supply yet.
 3. **Fit the laser driver** on standoffs on the right-hand wall, forward of the laser, and the **galvo driver board** forward of that.
-4. **Fit the auxiliary power supply** low on the right-hand side.
+4. **Fit the second power supply,** if your build has one (see the [parts list](parts.md#electronics)), low on the right-hand side.
 
 The beam path from the module to the wall is open on the prototype. A printed shroud over this gap is worth adding.
 
 ## 6. Electronics
 
-1. **Main power supply:** front bay, left.
+1. **RT-65C power supply:** front bay, left.
 2. **Controller:** fit the Mega to the controller stand in the front bay, right, and plug the control board onto it. Fit the TMC2208 with its heatsink into its socket.
 3. **Leave the USB port reachable.** The Mega is powered and controlled over USB from the host.
 
