@@ -20,7 +20,7 @@ Positions are given facing the front of the printer: the Z tower is at the back,
 
 ## 2. Z stage
 
-1. **Fit the endstop.** Mount the optical slot sensor in its printed mount at the top of the Z tower, so that the carriage blocks the slot at the top of travel. The firmware homes upward and expects the sensor's output HIGH when blocked.
+1. **Fit the endstop.** Mount the Form 2's own optical slot sensor in its printed mount at the top of the Z tower, so that the carriage blocks the slot at the top of travel. The firmware homes upward and expects the sensor's output HIGH when blocked.
 2. **Fit the build plate arm** to the carriage. The plate hangs from a post at the end of the arm, centred over the deck opening.
 3. **Fit the camera bracket** to the arm, with the camera looking straight down at the build area, beside the plate's post. Route its USB cable so it follows the carriage over the full travel without snagging.
 4. **Check the travel by hand** with the motor unpowered: the carriage should run from the endstop to the frame's hard stop, about 205 mm below it, without the arm or the camera touching anything.

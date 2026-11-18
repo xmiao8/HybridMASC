@@ -16,7 +16,6 @@ These are needed before someone else can repeat the build from this guide alone.
 - [ ] Galvo scanner and its driver board: scan speed and angle, supply voltages, input range and connector pin-out
 - [ ] Scan lens (barrel labelled "89.6 mm") and fold mirrors: models and coatings
 - [ ] Projector LED wavelength and irradiance at the build plane
-- [ ] Z motor model; lead screw lead; endstop sensor model
 - [ ] Which RT-65C rail feeds each load, and whether there is a second supply for the galvo and laser
 - [ ] How the AD5761R converters get their voltage reference
 - [ ] Release film: FEP or PFA, and supplier

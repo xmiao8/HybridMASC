@@ -1,6 +1,6 @@
 # Parts list
 
-Three tables: parts to buy, parts to print or machine, and fasteners and consumables. A part marked **to confirm** is on the machine, but its exact model or size isn't recorded yet (see [Open items](open-items.md)). Quantities are for one machine.
+Three tables: parts to buy, parts to print or machine, and fasteners and consumables. Quantities in brackets come with the donor Form 2. A part marked **to confirm** is on the machine, but its exact model or size isn't recorded yet (see [Open items](open-items.md)). Quantities are for one machine.
 
 Where a part was bought from a known listing, the Notes column links to it. Listings change, so check the specification against the table before ordering. Prices aren't listed yet.
 
@@ -10,10 +10,10 @@ Where a part was bought from a known listing, the Notes column links to it. List
 
 | # | Part | Qty | Specification | Notes |
 |---|---|---|---|---|
-| 1 | Formlabs Form 2 (donor printer) | 1 | Chassis, Z tower with lead screw and carriage, orange cover | A unit with a failed laser or mainboard is enough; only the frame and Z axis are reused |
-| 2 | Z stepper motor | 1 | 1.8° (200 steps/rev), driven at 600 mA RMS | The motor on the Form 2's Z tower; model **to confirm** |
-| 3 | Lead screw | 1 | TR8x4 (4 mm lead), direct drive | Part of the Z tower; lead **to confirm** against the firmware's setting |
-| 4 | Optical slot sensor (endstop) | 1 | Output HIGH when blocked, read with the controller's pull-up | Mounted at the top of travel; model **to confirm** |
+| 1 | Formlabs Form 2 (donor printer) | 1 | Chassis, Z tower, carriage, orange cover, and items 2 to 4 | A unit with a failed laser or mainboard is enough; only the frame and Z axis are reused |
+| 2 | Z stepper motor | (1) | 1.8° (200 steps/rev), driven at 600 mA RMS | From the donor Form 2; nothing to buy |
+| 3 | Lead screw | (1) | 4 mm lead, direct drive | From the donor Form 2; nothing to buy. The firmware assumes a 4 mm lead (800 microsteps/mm) |
+| 4 | Optical slot sensor (endstop) | (1) | Output HIGH when blocked, read with the controller's pull-up | From the donor Form 2; nothing to buy |
 
 ### Light sources and optics
 
