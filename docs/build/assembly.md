@@ -54,7 +54,7 @@ Leave fine positioning until [first power-up](commissioning.md): the projector i
 1. **Fit the laser bracket** to the outside of the right-hand wall, so the module's lens points through the entry hole at mirror 1.
 2. **Fit the laser module** to the bracket. Don't connect its supply yet.
 3. **Fit the laser driver** on standoffs on the right-hand wall, forward of the laser, and the **galvo driver board** forward of that.
-4. **Fit the second power supply,** if your build has one (see the [parts list](parts.md#electronics)), low on the right-hand side.
+4. **Fit the 12 V laser power supply** low on the right-hand side, near the laser driver.
 
 The beam path from the module to the wall is open on the prototype. A printed shroud over this gap is worth adding.
 

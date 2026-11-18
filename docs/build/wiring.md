@@ -13,8 +13,8 @@ flowchart LR
     M -- "SPI" --> DAC["2 x AD5761R"] -- "X, Y analog" --> GD["Galvo driver"] --> G["Galvo scanner"]
     M -- "PWM (TTL)" --> LD["Laser driver"] --> L["405 nm laser"]
     P1["RT-65C supply"] --> D
-    P2["Galvo and laser supply<br/>(to confirm)"] --> GD
-    P2 --> LD
+    P1 --> GD
+    P2["12 V laser supply"] --> LD
 ```
 
 ## Controller pin map
@@ -51,15 +51,15 @@ flowchart LR
 ## Laser
 
 - Connect D12 and ground to the laser driver's TTL modulation input.
-- Which supply powers the laser driver is **to confirm**. Give it its own switch, so the laser can be made safe without shutting anything else down.
+- The laser driver runs from its own 12 V, 2 A supply. Give that supply its own switch, so the laser can be made safe without shutting anything else down.
 - **Fit a pull-down resistor** (10 kΩ is typical) from the TTL input to ground at the driver. While the Mega resets or is being flashed, D12 is undriven for a second or two; without a pull-down the input floats and the laser can fire. Whether the prototype's driver already has one is **to confirm**, so keep the laser supply off during any reset or flash.
 
 ## Power
 
 | Supply | Feeds | Voltage |
 |---|---|---|
-| Mean Well RT-65C | Z driver (motor supply), and possibly the galvo and laser drivers | +5 V at 5 A, +15 V at 2.2 A, −15 V at 0.5 A. Which rail feeds which load is **to confirm** |
-| Second supply, if fitted | Galvo driver, laser driver | **To confirm** |
+| Mean Well RT-65C | Z driver (motor supply), and presumably the galvo driver | +5 V at 5 A, +15 V at 2.2 A, −15 V at 0.5 A. Which rail feeds which load is **to confirm** |
+| Laser supply | Laser module and driver | 12 V DC, 2 A |
 | Projector supply | DLP projector | As supplied with the projector |
 | Host USB | Mega (5 V), camera | 5 V |
 

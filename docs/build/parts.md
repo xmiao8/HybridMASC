@@ -21,7 +21,7 @@ Where a part was bought from a known listing, the Notes column links to it. List
 |---|---|---|---|---|
 | 5 | DLP projector | 1 | TI DLP LightCrafter 4500 (DLPC350 controller, 912 × 1140 DMD), blue LED channel | HDMI input at 1280 × 800; USB for LED control. LED wavelength **to confirm** |
 | 6 | Laser module | 1 | 405 nm laser engraver module, nominally 500 mW, with focusing lens | [Amazon listing](https://a.co/d/09Kt7r56). Laser class and measured power **to confirm** |
-| 7 | Laser driver | 1 | Constant-current driver with a TTL modulation input | Whether it comes with the module (item 6) or is separate, its supply voltage and its modulation bandwidth are **to confirm** |
+| 7 | Laser driver | 1 | Constant-current driver with a TTL modulation input | Runs from the 12 V laser supply (item 17). Whether it comes with the module (item 6) or is separate, and its modulation bandwidth, are **to confirm** |
 | 8 | Two-axis galvanometer scanner with its driver board | 1 set | Analog position inputs, one per axis | [Amazon listing](https://a.co/d/0a6Q2i9N). A laser-show (ILDA) scanner kit; only the mirrors, motors and analog driver are used, not the kit's show controller. Scan speed, scan angle and input range **to confirm** |
 | 9 | Fold mirror | (2) | | From the donor Form 2; nothing to buy |
 | 10 | Alignment camera | 1 | Arducam 8 MP USB (UVC), manual focus | Used for calibration only |
@@ -35,8 +35,8 @@ Where a part was bought from a known listing, the Notes column links to it. List
 | 13 | Stepper driver | 1 | TMC2208 V3.0 stepper driver module with heatsink, used in UART mode | [Amazon listing](https://a.co/d/09XOhLya). Socketed on the control board, with the UART wired both ways |
 | 14 | Galvo DAC | 2 | Analog Devices AD5761R, 16-bit, ±10 V output | One per axis; needs an external reference (**to confirm** how it is provided) |
 | 15 | Buzzer, voltage regulators, connectors | 1 set | As on the control board | Listed in the board's own bill of materials (not published yet) |
-| 16 | Power supply | 1 | Mean Well RT-65C: +5 V at 5 A, +15 V at 2.2 A, −15 V at 0.5 A, 65.5 W, 88–264 V AC input | Which rail feeds the Z driver, the galvo driver and the laser driver is **to confirm** |
-| 17 | Second power supply | 1 | **To confirm** | The assembly model shows a second, smaller supply on the right-hand side for the galvo and laser. Whether the machine has one, and its model, is **to confirm** |
+| 16 | Power supply | 1 | Mean Well RT-65C: +5 V at 5 A, +15 V at 2.2 A, −15 V at 0.5 A, 65.5 W, 88–264 V AC input | Feeds the Z driver and, presumably, the galvo driver. Which rail feeds which is **to confirm** |
+| 17 | Laser power supply | 1 | 12 V DC, 2 A | Powers the laser module and its driver (items 6 and 7) only. Model **to confirm** |
 | 18 | Projector power supply | 1 | As supplied with the LightCrafter 4500 | |
 
 ### Host and cables
