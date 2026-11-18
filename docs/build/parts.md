@@ -1,6 +1,6 @@
 # Parts list
 
-A cost estimate, then three tables: parts to buy, parts to print or machine, and fasteners and consumables. Quantities in brackets come with the donor Form 2. A part marked **to confirm** is on the machine, but its exact model or size isn't recorded yet (see [Open items](open-items.md)). Quantities are for one machine.
+A cost estimate, then three tables: parts to buy, parts to print or machine, and fasteners and consumables. Quantities in brackets come with the donor Form 2 or with another part. A part marked **to confirm** is on the machine, but its exact model or size isn't recorded yet (see [Open items](open-items.md)). Quantities are for one machine.
 
 Where a part was bought from a known listing, the Notes column links to it. Listings change, so check the specification against the table before ordering.
 
@@ -37,7 +37,7 @@ The DLP LightCrafter 4500 is most of the cost: about $1,300 from TI, more from d
 |---|---|---|---|---|---|
 | 5 | DLP projector | 1 | TI DLP LightCrafter 4500 (DLPC350 controller, 912 × 1140 DMD), blue LED channel | 1,300–1,700 | HDMI input at 1280 × 800; USB for LED control. LED wavelength **to confirm** |
 | 6 | Laser module | 1 | 405 nm laser engraver module, nominally 500 mW, with focusing lens | 25–55 | [Amazon listing](https://a.co/d/09Kt7r56). Laser class and measured power **to confirm** |
-| 7 | Laser driver | 1 | Constant-current driver with a TTL modulation input | Included (with item 6) | Runs from the 12 V laser supply (item 17). Whether it comes with the module (item 6) or is separate, and its modulation bandwidth, are **to confirm** |
+| 7 | Laser driver | (1) | Constant-current driver board with a TTL/PWM input | Included (with item 6) | Comes with the laser module; nothing to buy. Runs from the 12 V laser supply (item 17). Modulation bandwidth **to confirm** |
 | 8 | Two-axis galvanometer scanner with its driver board | 1 set | Analog position inputs, one per axis | 85–250 | [Amazon listing](https://a.co/d/0a6Q2i9N). A laser-show (ILDA) scanner kit; only the mirrors, motors and analog driver are used, not the kit's show controller. Scan speed, scan angle and input range **to confirm** |
 | 9 | Fold mirror | (2) | | — | From the donor Form 2; nothing to buy |
 | 10 | Alignment camera | 1 | Arducam 8 MP USB (UVC), manual focus | 35–75 | Used for calibration only |
