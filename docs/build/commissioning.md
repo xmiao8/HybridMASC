@@ -44,7 +44,7 @@ Follow the manual's [start-up order](../manual/startup.md): machine supplies fir
 2. Lay a tissue over the funnel where the film will be. Focus the projector's lens on it until the Siemens stars are sharp at the centre and at all four corners.
 3. Show the grid image and check the corner marker to see whether the image is mirrored as seen from above. Note the answer for the slicer's mirror settings.
 
-On this projector the LED current scale is reversed from the manufacturer's documentation; the interface hides this and shows 255 as brightest. See the manual's [Projector](../manual/projector.md) page.
+On the prototype's LightCrafter 4500 the LED current scale is reversed from the manufacturer's documentation; the interface hides this and shows 255 as brightest. See the manual's [Projector](../manual/projector.md) page.
 
 ## 6. Laser beam path
 

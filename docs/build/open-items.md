@@ -12,26 +12,22 @@ These are needed before someone else can repeat the build from this guide alone.
 
 ## Part models and ratings
 
-- [ ] Laser module and driver: laser class, measured optical power, modulation bandwidth, and whether the TTL input has a pull-down
-- [ ] Galvo scanner and its driver board: scan speed and angle, supply voltages, input range and connector pin-out
+- [ ] Laser module and driver: measured optical power, modulation bandwidth, and whether the TTL input has a pull-down
+- [ ] Galvo scanner and its driver board: scan speed and angle, input range, connector pin-out, and its current draw on −15 V
 - [ ] Projector LED wavelength and irradiance at the build plane
-- [ ] Which RT-65C rail feeds each load, and whether it powers the galvo driver
-- [ ] Model of the 12 V, 2 A laser supply
-- [ ] How the AD5761R converters get their voltage reference
-- [ ] Release film: FEP or PFA, and supplier
+- [ ] Release film supplier
 
 ## Mechanical details
 
-- [ ] Which vat revision is on the machine, and how the vat locates and locks on the funnel base
-- [ ] Screws for the seal plates, the vat frame and the funnel plate
-- [ ] Materials for the printed parts, especially those that touch resin
+- [ ] How the vat locates and locks on the funnel base
+- [ ] Screws that hold the seal plates to the vat frame
 - [ ] Whether the build plate needs levelling, and how
-- [ ] Base tray and driver board brackets: CAD or dimensions
+- [ ] Driver board brackets: CAD or dimensions
 - [ ] Dimensions for the chassis cuts: deck opening, front bay and laser entry hole
 
 ## Safety
 
-- [ ] Laser eyewear specification (optical density at 405 nm)
+- [ ] Laser eyewear: the optical density your laser safety officer specifies for a 0.5 W, 405 nm Class 4 laser
 - [ ] Optical density of the orange cover at 405 nm
 - [ ] A shroud for the open beam path between the laser module and the side wall
 - [ ] A hardware emergency stop or interlock that cuts the laser supply

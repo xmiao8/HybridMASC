@@ -16,7 +16,6 @@ Positions are given facing the front of the printer: the Z tower is at the back,
 5. **Clear the optics bay.** The inside of the base, below the deck, must be empty over the footprint of the projector, the galvo stand and the mirror stand.
 6. **Open the front bay** for the RT-65C power supply (left) and the controller (right).
 7. **Drill the laser entry hole** in the right-hand wall, about 12 mm in diameter, in line with fold mirror 1. Mark it from the mirror stand once that is in place (step 4.3), not from a measurement.
-8. **Fit the base tray** under the chassis in place of the stock feet.
 
 ## 2. Z stage
 
@@ -29,11 +28,11 @@ Whether the build plate needs levelling to the film, and how, is **to confirm**.
 
 ## 3. Vat
 
-1. **Print the funnel base and the vat frame.** Check that the funnel's inner walls are matte and dark: both light sources pass through it, and the laser's reflections off bright walls confuse the alignment camera.
+1. **Print the funnel base and the vat frame,** the frame in PET-CF since it holds the resin. Check that the funnel's inner walls are matte and dark: both light sources pass through it, and the laser's reflections off bright walls confuse the alignment camera.
 2. **Cut the release film** a little larger than the seal plates.
-3. **Clamp the film.** Lay the film between seal plate A (countersunk holes) and seal plate B (tapped holes) and fit the 18 M3 countersunk screws. Tighten them a little at a time, working across the plate, so the film ends up flat and evenly tensioned with no wrinkles.
+3. **Clamp the film.** Lay the film between seal plate A (countersunk holes) and seal plate B (tapped holes) and fit the 18 M3 × 6 mm countersunk screws. Tighten them a little at a time, working across the plate, so the film ends up flat and evenly tensioned with no wrinkles.
 4. **Fit the clamped film to the vat frame.** The seal plates have six larger holes for this; the screws they take are **to confirm**. The film is now the vat's floor.
-5. **Seat the funnel base on the deck,** funnel down through the opening, and fix it with its four corner screws.
+5. **Seat the funnel base on the deck,** funnel down through the opening, and fix it with its four 20 mm corner screws.
 6. **Place the vat on the funnel base.** How it locates and locks is **to confirm**.
 
 The film is a consumable. Slow laser passes mark it, and the Sequencer tab tracks which areas have been used (see the manual's [Sequencer](../manual/sequencer.md) page).
@@ -42,7 +41,7 @@ The film is a consumable. Slow laser passes mark it, and the Sequencer tab track
 
 The projector and the scanner sit side by side under the funnel, both pointing up at the same film. Neither can be directly under the centre of the build field, so each sits to one side of it and reaches the field at a slight angle. The calibration maps one onto the other, keystone included.
 
-1. **Projector.** Fix the LightCrafter 4500 to its stand with the lens pointing up, and place it so the lens is under the funnel. Leave access to its HDMI, USB and power connectors, and to the focus ring.
+1. **Projector.** Fix the projector (a LightCrafter 4500 on the prototype) to its stand with the lens pointing up, and place it so the lens is under the funnel. Leave access to its HDMI, USB and power connectors, and to the focus ring.
 2. **Galvo scanner.** Fix the scanner block to the galvo stand, under the funnel beside the projector lens, with its output facing up. There is no scan lens: the laser module's own lens focuses the beam on the film. Leave the scanner's input aperture facing fold mirror 2.
 3. **Fold mirrors.** Fit the two mirrors taken from the Form 2 to the mirror stand at the back right of the bay. Mirror 1 sits level with the laser's entry hole and turns the incoming beam straight down. Mirror 2 sits below it, level with the scanner's input, and turns the beam forward into the scanner.
 4. **Mark and drill the entry hole** (step 1.7) if you haven't yet, in line with mirror 1.

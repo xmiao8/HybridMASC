@@ -11,14 +11,14 @@ Approximate prices in US dollars, checked in November 2026 against distributor a
 | Group | Estimate (USD) |
 |---|---|
 | Purchased parts (tables below) | 1,884–3,197 |
-| Printed parts (filament) | 20–40 |
+| Printed parts (PETG-CF and PET-CF filament) | 30–60 |
 | Seal plates, machined from the drawings | 30–150 |
 | Fasteners, wire and connectors | 20–40 |
 | Release film | 18–30 |
 | Laser safety eyewear and a beam block | 40–150 |
 | **Total** | **about 2,000–3,600** |
 
-The DLP LightCrafter 4500 is most of the cost: about $1,300 from TI, more from distributors. Most of the rest is the donor Form 2, the galvo kit and the laptop, all of which vary a lot second-hand. A lab that already has a laptop and a spare Form 2 can build the rest for roughly $1,700–2,800.
+The projector is most of the cost. The total assumes a new DLP LightCrafter 4500 (about $1,300 from TI, more from distributors); a projector you already have brings it down a long way. Most of the rest is the donor Form 2, the galvo kit and the laptop, all of which vary a lot second-hand. A lab that already has a laptop and a spare Form 2 can build the rest for roughly $1,700–2,800.
 
 ## Purchased parts
 
@@ -35,12 +35,14 @@ The DLP LightCrafter 4500 is most of the cost: about $1,300 from TI, more from d
 
 | # | Part | Qty | Specification | Price (USD) | Notes |
 |---|---|---|---|---|---|
-| 5 | DLP projector | 1 | TI DLP LightCrafter 4500 (DLPC350 controller, 912 × 1140 DMD), blue LED channel | 1,300–1,700 | HDMI input at 1280 × 800; USB for LED control. LED wavelength **to confirm** |
-| 6 | Laser module | 1 | 405 nm laser engraver module, nominally 500 mW, with focusing lens | 25–55 | [Amazon listing](https://a.co/d/09Kt7r56). Laser class and measured power **to confirm** |
+| 5 | DLP projector | 1 | Any DLP projector with an HDMI input and a wavelength that cures your resin. The prototype uses a TI DLP LightCrafter 4500 (DLPC350 controller, 912 × 1140 DMD) on its blue LED channel | Varies; 1,300–1,700 for the LightCrafter 4500 | Use what you have. The control service switches and dims the LED through the LightCrafter's USB interface; with another projector, layer timing falls back to showing a black image, which lets some light through (see the note below this table) |
+| 6 | Laser module | 1 | 405 nm laser engraver module, 500 mW, with focusing lens and driver board | 25–55 | [Amazon listing](https://a.co/d/09Kt7r56). At 500 mW, treat it as a Class 4 laser |
 | 7 | Laser driver | (1) | Constant-current driver board with a TTL/PWM input | Included (with item 6) | Comes with the laser module; nothing to buy. Runs from the 12 V laser supply (item 17). Modulation bandwidth **to confirm** |
 | 8 | Two-axis galvanometer scanner with its driver board | 1 set | Analog position inputs, one per axis | 85–250 | [Amazon listing](https://a.co/d/0a6Q2i9N). A laser-show (ILDA) scanner kit; only the mirrors, motors and analog driver are used, not the kit's show controller. Scan speed, scan angle and input range **to confirm** |
 | 9 | Fold mirror | (2) | | — | From the donor Form 2; nothing to buy |
 | 10 | Alignment camera | 1 | Arducam 8 MP USB (UVC), manual focus | 35–75 | Used for calibration only |
+
+**Projector choice.** Any DLP projector that takes HDMI and emits at a wavelength your resin cures at will project the layers. The LightCrafter 4500 has two advantages the software relies on: its LED can be switched and dimmed over USB, which works as a shutter, and its native output is small enough for a fine pixel size. With a projector the service can't control, an exposure ends by showing black, and the light a DLP still lets through during a black frame keeps reaching the resin. Recalibrate the pixel size and the laser alignment for whichever projector you use.
 
 ### Electronics
 
@@ -49,11 +51,11 @@ The DLP LightCrafter 4500 is most of the cost: about $1,300 from TI, more from d
 | 11 | Controller | 1 | Arduino Mega 2560 R3 | 40–52 | Powered from the host's USB |
 | 12 | Control board | 1 | Custom two-layer circuit board that plugs onto the Mega ("MASC 3.0 v1.0", about 102 × 81 mm) | 15–50 (pcb fabrication) | Carries items 13 to 15 and the connectors; design files not published yet |
 | 13 | Stepper driver | 1 | TMC2208 V3.0 stepper driver module with heatsink, used in UART mode | 6–15 | [Amazon listing](https://a.co/d/09XOhLya). Socketed on the control board, with the UART wired both ways |
-| 14 | Galvo DAC | 2 | Analog Devices AD5761R, 16-bit, ±10 V output | 15–30 (both) | One per axis; needs an external reference (**to confirm** how it is provided) |
+| 14 | Galvo DAC | 2 | Analog Devices AD5761R, 16-bit, ±10 V output | 15–30 (both) | One per axis; uses its internal reference |
 | 15 | Buzzer, voltage regulators, connectors | 1 set | As on the control board | 10–30 (estimate) | Listed in the board's own bill of materials (not published yet) |
-| 16 | Power supply | 1 | Mean Well RT-65C: +5 V at 5 A, +15 V at 2.2 A, −15 V at 0.5 A, 65.5 W, 88–264 V AC input | 25–60 | Feeds the Z driver and, presumably, the galvo driver. Which rail feeds which is **to confirm** |
-| 17 | Laser power supply | 1 | 12 V DC, 2 A | 8–15 (estimate; often included with item 6) | Powers the laser module and its driver (items 6 and 7) only. Model **to confirm** |
-| 18 | Projector power supply | 1 | As supplied with the LightCrafter 4500 | Included (with item 5) | |
+| 16 | Power supply | 1 | Mean Well RT-65C: +5 V at 5 A, +15 V at 2.2 A, −15 V at 0.5 A, 65.5 W, 88–264 V AC input | 25–60 | +15 V feeds the Z driver; ±15 V feeds the galvo driver |
+| 17 | Laser power supply | 1 | 12 V DC, 2 A | 8–15 (estimate) | Any 12 V, 2 A adapter. Powers the laser module and its driver (items 6 and 7) only |
+| 18 | Projector power supply | 1 | As supplied with the projector | Included (with item 5) | |
 
 ### Host and cables
 
@@ -75,18 +77,18 @@ The CAD files will be added to the repository under `hardware/`. File names belo
 | Part | File | Qty | Size (mm) | How it's made | Notes |
 |---|---|---|---|---|---|
 | Light funnel and vat base | `Vat_P1` | 1 | 200 × 145 × 68 | 3D printed | Screws to the deck; its funnel passes through the deck opening. An alternative, `Vat_Alt`, is 5 mm taller |
-| Vat frame | `Vat_P2` | 1 | 80 × 103 × 23 | 3D printed | Holds the resin; the film closes its bottom. Use a resin-resistant material |
+| Vat frame | `Vat_P2` | 1 | 80 × 103 × 23 | 3D printed in PET-CF | Holds the resin; the film closes its bottom |
 | Seal plate A | `SealA` | 1 | 92.7 × 64.7 × 3.2 | Machined from 1/8 in (3.2 mm) stock | 18 countersunk M3 clearance holes round the window; drawing `SealA - Sheet1.pdf` |
 | Seal plate B | `SealB` | 1 | 92.7 × 64.7 × 3.2 | Machined from 1/8 in (3.2 mm) stock | 18 tapped M3 holes matching plate A; drawing `SealB - Sheet1.pdf` |
 | Vat lid | `Vat Lid` | 1 | | 3D printed | Covers the vat between prints |
 
-Which vat revision is on the machine now is **to confirm**: the CAD folder also holds `Vat`, `Vat Short`, `Vat_85`, `Vat_90`, `Vat_Alt_Bottom` and `Round Vat`.
+The CAD folder also holds older vat revisions (`Vat`, `Vat Short`, `Vat_85`, `Vat_90`, `Vat_Alt_Bottom`, `Round Vat`); the machine uses `Vat_P1` and `Vat_P2`.
 
 ### Z stage
 
 | Part | File | Qty | Size (mm) | How it's made | Notes |
 |---|---|---|---|---|---|
-| Build plate with arm | `Build Plate` | 1 | 149 × 58 × 30 | 3D printed on the prototype; material **to confirm** | Replaces the Form 2 platform arm. `Build Plate Thin` is a variant |
+| Build plate with arm | `Build Plate` | 1 | 149 × 58 × 30 | 3D printed | Replaces the Form 2 platform arm. `Build Plate Thin` is a variant |
 | Camera bracket | `Camera` | 1 | 39 × 58 × 30 | 3D printed | Holds the alignment camera on the carriage arm, looking down |
 | Endstop mount | `sensor` | 1 | | 3D printed | Holds the slot sensor at the top of the Z tower |
 
@@ -98,7 +100,7 @@ Which vat revision is on the machine now is **to confirm**: the CAD folder also 
 | Galvo stand | `Galvo Stand` | 1 | 118 × 76 × 45 | 3D printed | Holds the scanner block under the funnel |
 | Mirror stand | `Mirror Stand` | 1 | 91 × 92 × 70 | 3D printed | Carries the two fold mirrors from the Form 2 |
 | Laser bracket | `Top Laser`, `Laser_Assem` | 1 | 84 × 58 × 30; 104 × 88 × 36 | 3D printed | Holds the laser module on the right-hand wall, in line with the entry hole |
-| Laser adapter | `Laser Adapter` | 1 | | 3D printed | Fits the laser module to its bracket; whether it is still in use is **to confirm** |
+| Laser adapter | `Laser Adapter` | 1 | | 3D printed | Fits the laser module to its bracket |
 
 ### Electronics
 
@@ -106,25 +108,24 @@ Which vat revision is on the machine now is **to confirm**: the CAD folder also 
 |---|---|---|---|---|---|
 | Controller stand | `Microcontroller Stand` | 1 | 100 × 76 × 5 | 3D printed | Plate for the Mega and control board in the front bay |
 | Driver board brackets | | 2 | | Sheet or printed plate with standoffs | For the laser driver and the galvo driver on the right-hand wall; no CAD yet |
-| Base tray | | 1 | About 360 × 385 × 17 | **To confirm** | Grid tray the chassis stands on, in place of the Form 2's feet; no CAD yet |
 
 ## Fasteners and consumables
 
 | Part | Qty | Notes |
 |---|---|---|
-| M3 countersunk screws | 18 | Clamp the film between the seal plates. Length **to confirm** |
+| M3 × 6 mm countersunk screws | 18 | Clamp the film between the seal plates |
 | M3 screws, mixed lengths, with nuts or heat-set inserts | As needed | Printed parts, brackets, standoffs |
-| Screws for the funnel plate | 4 | Through the funnel plate's corners into the deck. Size **to confirm** |
+| 20 mm screws for the funnel plate | 4 | Through the funnel plate's corners into the deck |
 | M3 standoffs | 8 | Laser driver and galvo driver boards |
-| Release film | 1 sheet, at least 100 × 70 mm | FEP or PFA, 0.127 mm (0.005 in). Which of the two **to confirm**. A consumable: the laser marks it |
+| FEP release film | 1 sheet, at least 100 × 70 mm | 0.127 mm (0.005 in). A consumable: the laser marks it |
 | Hook-up wire, crimp connectors, ferrules | | Motor, endstop, galvo signal, laser TTL and power wiring |
-| Filament for the printed parts | | Material used on the prototype **to confirm** |
+| Filament for the printed parts | About 1 kg | PETG-CF for most parts; PET-CF for the vat frame, which touches resin |
 | Tissue (Kimwipe) and a printed 10 mm scale bar | | Stand in for the film during the first calibrations |
 
 ## Safety equipment
 
 | Part | Notes |
 |---|---|
-| Laser safety eyewear for 405 nm | The optical density needed depends on the laser's class and power, both **to confirm**. One pair for everyone in the room |
+| Laser safety eyewear for 405 nm | Rated for a 0.5 W Class 4 laser at 405 nm (commonly OD 4 or higher); confirm the rating with your laser safety officer. One pair for everyone in the room |
 | Beam block | A matte, non-flammable plate to stop the beam during mirror alignment |
 | Nitrile gloves, eye protection, fume hood | For resin handling; see the manual's [Safety](../manual/safety.md) page |

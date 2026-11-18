@@ -34,16 +34,17 @@ flowchart LR
 ## Z axis
 
 - Connect the stepper's two coils to the TMC2208's motor outputs. If the plate moves down when commanded up, swap one coil's pair of wires.
-- The driver's motor supply comes from the RT-65C power supply, not from USB. After the motor supply has been off, the driver forgets its settings; the firmware sends them again before every move.
+- The driver's motor supply is the RT-65C's +15 V rail, not USB. After the motor supply has been off, the driver forgets its settings; the firmware sends them again before every move.
 - Microstepping (16) and current (600 mA RMS) are set by the firmware over the UART. They don't depend on the driver's jumpers or potentiometer, provided the UART works.
 - Wire the endstop's supply, ground and signal. An unplugged sensor reads the same as a triggered one, and homing refuses to start in that state.
 
 ## Galvo
 
 - Each AD5761R's output goes to one axis input on the galvo driver board, with a common signal ground.
-- The firmware assumes a ±10 V output range and turns the converters' internal reference off, so the board must provide an external reference. How the prototype does this is **to confirm**.
+- The converters run on their internal reference, with a ±10 V output range.
 - The scanner is used over a small part of that range. The starting window in the software is 0.5 to 6.5 V in X and 0.5 to 3.5 V in Y; calibration widens it to cover the projected field.
-- The galvo driver board's supply and connector pin-out are **to confirm**. Galvo drivers of this kind usually take a split supply, such as the RT-65C's ±15 V rails; check the board's own label before connecting it.
+- The galvo driver board runs from the RT-65C's +15 V and −15 V rails, with the supply's common as ground. The kit's own power supply isn't used. Check the polarity on the board's label before connecting it: a reversed split supply destroys the drivers.
+- Similar galvo kits are specified at up to 0.6 A on −15 V, a little over the RT-65C's 0.5 A rating for that rail (its current range goes to 1 A). Don't add other loads to −15 V.
 
 !!! warning "Power order"
     The firmware sets up the converters once, when the Mega starts. If the galvo electronics are powered after the Mega, the scanner ignores every move until the Mega is reset. Since the Mega is powered from the host's USB, switch on the machine's supplies before the host.
@@ -58,8 +59,10 @@ flowchart LR
 
 | Supply | Feeds | Voltage |
 |---|---|---|
-| Mean Well RT-65C | Z driver (motor supply), and presumably the galvo driver | +5 V at 5 A, +15 V at 2.2 A, −15 V at 0.5 A. Which rail feeds which load is **to confirm** |
-| Laser supply | Laser module and driver | 12 V DC, 2 A |
+| Mean Well RT-65C, +15 V | Z driver (motor supply), galvo driver (positive rail) | 15 V, 2.2 A |
+| Mean Well RT-65C, −15 V | Galvo driver (negative rail) | −15 V, 0.5 A |
+| Mean Well RT-65C, +5 V | **To confirm** whether anything uses it | 5 V, 5 A |
+| Laser supply | Laser module and its driver | 12 V DC, 2 A; any adapter of that rating |
 | Projector supply | DLP projector | As supplied with the projector |
 | Host USB | Mega (5 V), camera | 5 V |
 
