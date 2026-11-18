@@ -43,11 +43,12 @@ Where a part was bought from a known listing, the Notes column links to it. List
 
 | # | Part | Qty | Specification | Notes |
 |---|---|---|---|---|
-| 19 | Host computer | 1 | Laptop or small PC with HDMI out and three USB ports, running Linux | The prototype uses a 4-thread laptop with 6 GB RAM and Ubuntu; no desktop session is needed |
+| 19 | Host laptop | 1 | Linux laptop with one HDMI port and at least two USB ports | Runs the control service and drives the projector. The Mega and the projector's LED control take one USB port each; the alignment camera needs a third, so use a USB hub if the laptop has only two. The prototype uses a 4-thread laptop with 6 GB RAM running Ubuntu; no desktop session is needed |
 | 20 | HDMI cable | 1 | Host to projector | |
 | 21 | USB cable, A to B | 1 | Host to Mega | Also powers the Mega |
 | 22 | USB cable to the projector's USB port | 1 | Host to projector (LED control) | |
 | 23 | USB cable for the camera | 1 | Long enough to follow the Z carriage over its full travel | |
+| 24 | USB hub | (1) | Powered USB 2.0 or better | Only if the laptop has fewer than three USB ports |
 
 ## Printed and machined parts
 
